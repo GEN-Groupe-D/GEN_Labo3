@@ -16,6 +16,7 @@ buildNumber.properties
 
 .idea
 Labo3.iml
+junit5-jupiter-starter-maven.iml
 
 # User-specific stuff
 .idea/**/workspace.xml
