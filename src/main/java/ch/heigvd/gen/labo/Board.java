@@ -3,7 +3,7 @@ package ch.heigvd.gen.labo;
 import java.util.ArrayList;
 
 public class Board {
-    private static final int SQUARE_NB = 40;
+    public static final int SQUARE_NB = 40;
 
     private ArrayList<Square> squares;
 
@@ -27,5 +27,12 @@ public class Board {
      */
     public Square getSquare(Square initialSquare, int moveNb) {
         return squares.get((squares.indexOf(initialSquare) + moveNb) % squares.size());
+    }
+
+    /**
+     * @return Get board's first square (Go square)
+     */
+    public Square getFirstSquare() {
+        return squares.get(0);
     }
 }
