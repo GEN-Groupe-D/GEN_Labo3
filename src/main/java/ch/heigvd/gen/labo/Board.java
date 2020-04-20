@@ -2,7 +2,7 @@ package ch.heigvd.gen.labo;
 
 import java.util.ArrayList;
 
-public class Board {
+class Board {
     public static final int SQUARE_NB = 40;
 
     private ArrayList<Square> squares;

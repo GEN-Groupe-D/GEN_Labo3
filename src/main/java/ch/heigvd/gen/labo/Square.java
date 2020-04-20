@@ -1,6 +1,6 @@
 package ch.heigvd.gen.labo;
 
-public class Square {
+class Square {
     private String name;
 
     /**

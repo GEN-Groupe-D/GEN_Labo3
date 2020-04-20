@@ -2,7 +2,7 @@ package ch.heigvd.gen.labo;
 
 import java.util.ArrayList;
 
-public class Player {
+class Player {
     private String name;
     private ArrayList<Die> dices;
     private Board board;
