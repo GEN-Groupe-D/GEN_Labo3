@@ -2,8 +2,9 @@ package ch.heigvd.gen.labo;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import java.time.Duration;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MonopolyGameTest {
 
@@ -32,6 +33,13 @@ public class MonopolyGameTest {
         assertAll(()->{
             MonopolyGame mg = new MonopolyGame(MonopolyGame.MIN_PLAYER_NB);
             mg.playGame();
+        });
+    }
+
+    @Test
+    public void gameDontCrash() {
+        assertTimeout(Duration.ofSeconds(10), () -> {
+            new MonopolyGame(MonopolyGame.MAX_PLAYER_NB);
         });
     }
 }
