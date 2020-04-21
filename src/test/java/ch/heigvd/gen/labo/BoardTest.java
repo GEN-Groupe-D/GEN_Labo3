@@ -22,11 +22,11 @@ public class BoardTest {
     public void incrementSquare() {
         Square square1 = board.getFirstSquare();
 
-        Square square2 = board.getSquare(square1, 9);
-        assertEquals(square2.getName(), "Square 9");
+        Square square2 = board.getSquare(square1, 3);
+        assertEquals(square2.getName(), "Square 3");
 
         Square square3 = board.getSquare(square2, 1);
-        assertEquals(square3.getName(), "Square 10");
+        assertEquals(square3.getName(), "Square 4");
     }
 
     @Test

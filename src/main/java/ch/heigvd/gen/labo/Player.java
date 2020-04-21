@@ -4,19 +4,20 @@ import java.util.ArrayList;
 
 class Player {
     private String name;
-    private ArrayList<Die> dices;
+    private Cup cup;
     private Board board;
     private Piece piece;
+    private int cash;
 
     /**
      * Player class constructor
      * @param name Player name
-     * @param dices Dices of the game
+     * @param cup cup od Dices
      * @param board Board of the game
      */
-    public Player(String name, ArrayList<Die> dices, Board board) {
+    public Player(String name, Cup cup, Board board) {
         this.name = name;
-        this.dices = dices;
+        this.cup = cup;
         this.board = board;
         piece = new Piece("piece_" + name, board.getFirstSquare());
     }
@@ -25,14 +26,12 @@ class Player {
      * Play player turn
      */
     public void takeTurn() {
-        int total = 0;
+        int total;
         Square oldLoc, newLoc;
 
-        // 1. Calculate a random number total between 2 and 12
-        for (Die dice : dices) {
-            dice.roll();
-            total += dice.getFaceValue();
-        }
+        this.cup.roll();
+
+        total = this.cup.getTotal();
 
         // 2. Calculate the new square location
         oldLoc = piece.getLocation();
@@ -40,6 +39,13 @@ class Player {
 
         // 3. Move the player's piece from the old location to the new location
         piece.setLocation(newLoc);
+        newLoc.landedOn(this);
+    }
+
+    public void setLocation(Square newLoc) {
+
+        piece.setLocation(newLoc);
+        newLoc.landedOn(this);
     }
 
     /**
@@ -55,4 +61,28 @@ class Player {
     public Piece getPiece() {
         return piece;
     }
+
+    /**
+     * add a sum to current player cash
+     * @param sumToAdd
+     */
+    public void addCash(int sumToAdd) {
+        this.cash += sumToAdd;
+    }
+
+    /**
+     * remove some cash to the player
+     * @param sumToSub
+     */
+    public void reduceCash(int sumToSub) {
+        this.cash -= sumToSub;
+    }
+
+    /**
+     * @return total cash of player
+     */
+    public int getNetWorth() {
+        return this.cash;
+    }
+
 }

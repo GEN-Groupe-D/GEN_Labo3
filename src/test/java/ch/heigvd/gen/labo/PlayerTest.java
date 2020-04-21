@@ -15,11 +15,8 @@ public class PlayerTest {
 
     @BeforeEach
     void constructPlayer() {
-        ArrayList<Die> dices = new ArrayList<Die>();
-        for (int i = 0; i < MonopolyGame.NB_DICE; i++) {
-            dices.add(new Die());
-        }
-        player = new Player("player_1", dices, new Board());
+
+        player = new Player("player_1", new Cup(), new Board());
     }
 
     @Test
@@ -36,5 +33,18 @@ public class PlayerTest {
     public void takeTurnTest() {
         player.takeTurn();
         assertTrue(player.getPiece().getLocation().getName().contains("Square"));
+    }
+
+    @Test
+    public void addCashTest() {
+        player.addCash(200);
+        assertEquals(200, player.getNetWorth());
+    }
+
+    @Test
+    public void reduceCashTest() {
+        player.addCash(500);
+        player.reduceCash(200);
+        assertEquals(300, player.getNetWorth());
     }
 }

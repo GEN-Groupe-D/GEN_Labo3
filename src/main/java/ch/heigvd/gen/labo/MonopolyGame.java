@@ -9,7 +9,6 @@ public class MonopolyGame {
     public static final int NB_DICE = 2;
 
     private Board board;
-    private ArrayList<Die> dices;
     private ArrayList<Player> players;
 
     /**
@@ -23,14 +22,9 @@ public class MonopolyGame {
 
         board = new Board();
 
-        dices = new ArrayList<Die>();
-        for (int i = 0; i < NB_DICE; i++) {
-            dices.add(new Die());
-        }
-
         players = new ArrayList<Player>();
         for (int i = 0; i < nbPlayer; i++) {
-            players.add(new Player("player_" + (i + 1), dices, board));
+            players.add(new Player("player_" + (i + 1), new Cup(), board));
         }
     }
 
