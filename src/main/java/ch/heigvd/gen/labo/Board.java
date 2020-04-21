@@ -18,7 +18,7 @@ class Board {
         for (int i = 1; i < SQUARE_NB; i++) {
             switch (i){
                 case 10:
-                    squares.add(new IncomeTaxSquare("IncomeSquareSquare " + i));
+                    squares.add(new IncomeTaxSquare("IncomeTaxSquare " + i));
                     break;
                 case jailPosition:
                     squares.add(new RegularSquare("PrisonSquare"));
