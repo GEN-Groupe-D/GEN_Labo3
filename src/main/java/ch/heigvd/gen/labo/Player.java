@@ -7,6 +7,7 @@ class Player {
     private ArrayList<Die> dices;
     private Board board;
     private Piece piece;
+    private int cash;
 
     /**
      * Player class constructor
@@ -54,5 +55,28 @@ class Player {
      */
     public Piece getPiece() {
         return piece;
+    }
+
+    /**
+     * add a sum to current player cash
+     * @param sumToAdd
+     */
+    public void addCash(int sumToAdd) {
+        this.cash += sumToAdd;
+    }
+
+    /**
+     * remove some cash to the player
+     * @param sumToSub
+     */
+    public void reduceCash(int sumToSub) {
+        this.cash -= sumToSub;
+    }
+
+    /**
+     * @return total cash of player
+     */
+    public int getNetWorth() {
+        return this.cash;
     }
 }
