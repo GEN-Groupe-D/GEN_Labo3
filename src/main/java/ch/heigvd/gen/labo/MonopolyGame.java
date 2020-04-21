@@ -22,7 +22,11 @@ public class MonopolyGame {
         }
 
         board = new Board();
-        dices = new ArrayList<Die>(NB_DICE);
+
+        dices = new ArrayList<Die>();
+        for (int i = 0; i < NB_DICE; i++) {
+            dices.add(new Die());
+        }
 
         players = new ArrayList<Player>();
         for (int i = 0; i < nbPlayer; i++) {

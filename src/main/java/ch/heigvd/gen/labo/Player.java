@@ -8,6 +8,12 @@ class Player {
     private Board board;
     private Piece piece;
 
+    /**
+     * Player class constructor
+     * @param name Player name
+     * @param dices Dices of the game
+     * @param board Board of the game
+     */
     public Player(String name, ArrayList<Die> dices, Board board) {
         this.name = name;
         this.dices = dices;
@@ -19,18 +25,18 @@ class Player {
      * Play player turn
      */
     public void takeTurn() {
-        int fvTot = 0;
+        int total = 0;
         Square oldLoc, newLoc;
 
         // 1. Calculate a random number total between 2 and 12
         for (Die dice : dices) {
             dice.roll();
-            fvTot += dice.getFaceValue();
+            total += dice.getFaceValue();
         }
 
         // 2. Calculate the new square location
         oldLoc = piece.getLocation();
-        newLoc = board.getSquare(oldLoc, fvTot);
+        newLoc = board.getSquare(oldLoc, total);
 
         // 3. Move the player's piece from the old location to the new location
         piece.setLocation(newLoc);
