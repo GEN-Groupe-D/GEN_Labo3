@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 class Board {
     public static final int SQUARE_NB = 40;
+    private final int jailPosition = 20;
 
     private ArrayList<Square> squares;
 
@@ -19,8 +20,11 @@ class Board {
                 case 10:
                     squares.add(new IncomeTaxSquare("IncomeSquareSquare " + i));
                     break;
-                case 20:
-                    squares.add(new GoToJailSquare("GoToJailSquare " + i));
+                case jailPosition:
+                    squares.add(new RegularSquare("PrisonSquare"));
+                    break;
+                case 30:
+                    squares.add(new GoToJailSquare("GoToJailSquare " + i, squares.get(jailPosition)));
                     break;
                 default:
                     squares.add(new RegularSquare("Square " + i));
@@ -45,4 +49,5 @@ class Board {
     public Square getFirstSquare() {
         return squares.get(0);
     }
+
 }

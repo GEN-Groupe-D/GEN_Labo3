@@ -44,6 +44,12 @@ class Player {
         newLoc.landedOn(this);
     }
 
+    public void setLocation(Square newLoc) {
+
+        piece.setLocation(newLoc);
+        newLoc.landedOn(this);
+    }
+
     /**
      * @return Get player name
      */

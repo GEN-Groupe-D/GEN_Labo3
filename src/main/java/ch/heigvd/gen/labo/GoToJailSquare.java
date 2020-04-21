@@ -6,12 +6,17 @@ public class GoToJailSquare extends Square {
      *
      * @param name Square name
      */
-    public GoToJailSquare(String name) {
+
+    private Square jailSquare;
+
+    public GoToJailSquare(String name, Square jailSquare) {
         super(name);
+        this.jailSquare = jailSquare;
     }
 
     @Override
     public void landedOn(Player p) {
 
+        p.setLocation(jailSquare);
     }
 }
