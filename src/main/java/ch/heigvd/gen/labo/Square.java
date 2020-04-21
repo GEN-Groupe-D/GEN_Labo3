@@ -1,6 +1,6 @@
 package ch.heigvd.gen.labo;
 
-class Square {
+abstract class Square {
     private String name;
 
     /**
@@ -17,4 +17,6 @@ class Square {
     public String getName() {
         return name;
     }
+
+    abstract public void landedOn(Player p);
 }

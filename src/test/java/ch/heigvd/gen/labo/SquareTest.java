@@ -8,7 +8,7 @@ public class SquareTest {
     @Test
     public void squareInitializedWithCorrectName() {
         String name = "Square 1";
-        Square square = new Square(name);
+        Square square = new RegularSquare(name);
         assertEquals(square.getName(), name);
     }
 }

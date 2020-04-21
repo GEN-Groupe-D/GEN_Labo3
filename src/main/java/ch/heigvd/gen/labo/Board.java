@@ -13,9 +13,19 @@ class Board {
     public Board() {
         squares = new ArrayList<Square>();
 
-        squares.add(new Square("Go"));
+        squares.add(new GoSquare("Go"));
         for (int i = 1; i < SQUARE_NB; i++) {
-            squares.add(new Square("Square " + i));
+            switch (i){
+                case 10:
+                    squares.add(new IncomeTaxSquare("IncomeSquareSquare " + i));
+                    break;
+                case 20:
+                    squares.add(new GoToJailSquare("GoToJailSquare " + i));
+                    break;
+                default:
+                    squares.add(new RegularSquare("Square " + i));
+
+            }
         }
     }
 

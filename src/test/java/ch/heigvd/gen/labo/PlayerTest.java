@@ -37,4 +37,17 @@ public class PlayerTest {
         player.takeTurn();
         assertTrue(player.getPiece().getLocation().getName().contains("Square"));
     }
+
+    @Test
+    public void addCashTest() {
+        player.addCash(200);
+        assertEquals(200, player.getNetWorth());
+    }
+
+    @Test
+    public void reduceCashTest() {
+        player.addCash(500);
+        player.reduceCash(200);
+        assertEquals(300, player.getNetWorth());
+    }
 }

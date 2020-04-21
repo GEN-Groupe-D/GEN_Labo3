@@ -41,6 +41,7 @@ class Player {
 
         // 3. Move the player's piece from the old location to the new location
         piece.setLocation(newLoc);
+        newLoc.landedOn(this);
     }
 
     /**
@@ -79,4 +80,5 @@ class Player {
     public int getNetWorth() {
         return this.cash;
     }
+
 }
