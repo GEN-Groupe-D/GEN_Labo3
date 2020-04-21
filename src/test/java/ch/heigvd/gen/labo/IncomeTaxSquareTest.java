@@ -14,14 +14,9 @@ public class IncomeTaxSquareTest {
     @Test
     public void reducePlayerCashTest() {
 
-        ArrayList<Die> dices = new ArrayList<Die>();
-        for (int i = 0; i < MonopolyGame.NB_DICE; i++) {
-            dices.add(new Die());
-        }
-
         board = new Board();
 
-        player = new Player("player_1", dices, board);
+        player = new Player("player_1", new Cup(), board);
         player.addCash(300);
 
         Square oldLoc = player.getPiece().getLocation();

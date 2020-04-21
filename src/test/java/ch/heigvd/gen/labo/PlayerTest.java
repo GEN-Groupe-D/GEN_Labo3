@@ -15,11 +15,8 @@ public class PlayerTest {
 
     @BeforeEach
     void constructPlayer() {
-        ArrayList<Die> dices = new ArrayList<Die>();
-        for (int i = 0; i < MonopolyGame.NB_DICE; i++) {
-            dices.add(new Die());
-        }
-        player = new Player("player_1", dices, new Board());
+
+        player = new Player("player_1", new Cup(), new Board());
     }
 
     @Test

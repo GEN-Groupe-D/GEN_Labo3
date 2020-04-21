@@ -18,14 +18,10 @@ public class GoSquareTest {
     @ValueSource(ints = {2, 4, 5})
     public void addCashTest(int turn) {
 
-        ArrayList<Die> dices = new ArrayList<Die>();
-        for (int i = 0; i < MonopolyGame.NB_DICE; i++) {
-            dices.add(new Die());
-        }
 
         board = new Board();
 
-        player = new Player("player_1", dices, board);
+        player = new Player("player_1", new Cup(), board);
 
         Square oldLoc = player.getPiece().getLocation();
 
