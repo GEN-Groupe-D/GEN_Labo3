@@ -1,3 +1,9 @@
+/*
+ * GEN Labo3 - Monopoly
+ * Authors  : Julien Béguin & Thomas Rieder
+ * Date     : 22.04.2020
+ */
+
 package ch.heigvd.gen.labo;
 
 class Piece {
