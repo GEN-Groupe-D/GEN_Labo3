@@ -7,6 +7,8 @@
 package ch.heigvd.gen.labo;
 
 class Player {
+    public static final int INITIAL_CASH = 1500;
+
     private String name;
     private Cup cup;
     private Board board;
@@ -23,6 +25,7 @@ class Player {
         this.name = name;
         this.cup = cup;
         this.board = board;
+        cash = INITIAL_CASH;
         piece = new Piece("piece_" + name, board.getFirstSquare());
     }
 
@@ -33,9 +36,10 @@ class Player {
         int total;
         Square oldLoc, newLoc;
 
-        this.cup.roll();
+        cup.roll();
+        System.out.println(name + " rolled " + cup.getTotal());
 
-        total = this.cup.getTotal();
+        total = cup.getTotal();
 
         // 2. Calculate the new square location
         oldLoc = piece.getLocation();
@@ -44,6 +48,7 @@ class Player {
         // 3. Move the player's piece from the old location to the new location
         piece.setLocation(newLoc);
         newLoc.landedOn(this);
+        System.out.println(name + " landed on " + newLoc.getName());
     }
 
     public void setLocation(Square newLoc) {

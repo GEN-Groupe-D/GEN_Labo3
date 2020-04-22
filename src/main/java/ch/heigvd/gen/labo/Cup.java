@@ -14,8 +14,6 @@ public class Cup {
     private int total;
 
     public Cup(int nbDice) {
-        total = 0;
-
         for (int i = 0; i < nbDice; i++) {
 
             dices.add(new Die());
@@ -26,7 +24,7 @@ public class Cup {
      * roll the dices generate number and add to total
      */
     public void roll() {
-
+        total = 0;
         // Calculate a random number total between 2 and 12
         for (Die dice : dices) {
             dice.roll();

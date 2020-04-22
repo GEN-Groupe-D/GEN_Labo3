@@ -35,7 +35,7 @@ public class MonopolyGameTest {
     }
 
     @Test
-    public void normalGame() {
+    public void normalGameDontCrash() {
         assertAll(()->{
             MonopolyGame mg = new MonopolyGame(MonopolyGame.MIN_PLAYER_NB);
             mg.playGame();
@@ -43,7 +43,7 @@ public class MonopolyGameTest {
     }
 
     @Test
-    public void gameDontCrash() {
+    public void gameFinishInTime() {
         assertTimeout(Duration.ofSeconds(10), () -> {
             new MonopolyGame(MonopolyGame.MAX_PLAYER_NB);
         });

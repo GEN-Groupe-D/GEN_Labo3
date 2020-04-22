@@ -7,6 +7,9 @@
 package ch.heigvd.gen.labo;
 
 public class IncomeTaxSquare extends Square {
+    public static final double REDUCE_PERCENT_NET_WORTH = 0.1;
+    public static final int REDUCE_MAX_VALUE = 200;
+
     /**
      * Square class constructor
      *
@@ -18,13 +21,6 @@ public class IncomeTaxSquare extends Square {
 
     @Override
     public void landedOn(Player p) {
-        int w = p.getNetWorth();
-
-        int tenPercent = (int)(w * 0.1);
-
-        int amount = Math.min(200, tenPercent);
-
-        p.reduceCash(amount);
-
+        p.reduceCash(Math.min(REDUCE_MAX_VALUE, (int)(p.getNetWorth() * REDUCE_PERCENT_NET_WORTH)));
     }
 }
