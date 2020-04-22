@@ -16,7 +16,7 @@ public class PlayerTest {
     @BeforeEach
     void constructPlayer() {
 
-        player = new Player("player_1", new Cup(), new Board());
+        player = new Player("player_1", new Cup(MonopolyGame.NB_DICE), new Board());
     }
 
     @Test

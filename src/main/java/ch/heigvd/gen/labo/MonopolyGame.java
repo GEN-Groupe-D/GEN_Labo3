@@ -10,6 +10,7 @@ public class MonopolyGame {
 
     private Board board;
     private ArrayList<Player> players;
+    private Cup cup;
 
     /**
      * MonopolyGame class constructor
@@ -21,10 +22,11 @@ public class MonopolyGame {
         }
 
         board = new Board();
+        cup = new Cup(NB_DICE);
 
         players = new ArrayList<Player>();
         for (int i = 0; i < nbPlayer; i++) {
-            players.add(new Player("player_" + (i + 1), new Cup(), board));
+            players.add(new Player("player_" + (i + 1), cup, board));
         }
     }
 

@@ -7,13 +7,12 @@ public class Cup {
     private ArrayList<Die> dices = new ArrayList<Die>();
     private int total;
 
-    public Cup() {
+    public Cup(int nbDice) {
+        total = 0;
 
-        this.total = 0;
+        for (int i = 0; i < nbDice; i++) {
 
-        for (int i = 0; i < MonopolyGame.NB_DICE; i++) {
-
-            this.dices.add(new Die());
+            dices.add(new Die());
         }
     }
 
@@ -23,9 +22,9 @@ public class Cup {
     public void roll() {
 
         // Calculate a random number total between 2 and 12
-        for (Die dice : this.dices) {
+        for (Die dice : dices) {
             dice.roll();
-            this.total += dice.getFaceValue();
+            total += dice.getFaceValue();
         }
     }
 
@@ -33,6 +32,6 @@ public class Cup {
      * @return int between 2 and 12
      */
     public int getTotal() {
-        return this.total;
+        return total;
     }
 }

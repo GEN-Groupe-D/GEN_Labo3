@@ -8,7 +8,7 @@ public class CupTest {
 
     @RepeatedTest(20)
     void cupRollTest(){
-        Cup cup = new Cup();
+        Cup cup = new Cup(MonopolyGame.NB_DICE);
 
         cup.roll();
 

@@ -14,7 +14,7 @@ public class IncomeTaxSquareTest {
 
         board = new Board();
 
-        player = new Player("player_1", new Cup(), board);
+        player = new Player("player_1", new Cup(MonopolyGame.NB_DICE), board);
         player.addCash(300);
 
         Square oldLoc = player.getPiece().getLocation();
