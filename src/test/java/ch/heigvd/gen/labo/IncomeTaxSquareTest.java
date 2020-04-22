@@ -2,8 +2,6 @@ package ch.heigvd.gen.labo;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class IncomeTaxSquareTest {
@@ -22,7 +20,7 @@ public class IncomeTaxSquareTest {
         Square oldLoc = player.getPiece().getLocation();
 
         //10 is the location of IncomeTaxSquare
-        Square newLoc = board.getSquare(oldLoc, 10);
+        Square newLoc = board.getSquare(oldLoc, Board.INCOME_TAX_SQUARE_POS);
 
         player.getPiece().setLocation(newLoc);
         newLoc.landedOn(player);

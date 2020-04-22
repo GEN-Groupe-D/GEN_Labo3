@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 class Board {
     public static final int SQUARE_NB = 40;
-    private final int jailPosition = 20;
+    public static final int INCOME_TAX_SQUARE_POS = 20;
+    public static final int PRISON_SQUARE_POS = 10;
+    public static final int GO_TO_JAIL_SQUARE_POS = 30;
 
     private ArrayList<Square> squares;
 
@@ -17,14 +19,14 @@ class Board {
         squares.add(new GoSquare("Go"));
         for (int i = 1; i < SQUARE_NB; i++) {
             switch (i){
-                case 10:
+                case INCOME_TAX_SQUARE_POS:
                     squares.add(new IncomeTaxSquare("IncomeTaxSquare " + i));
                     break;
-                case jailPosition:
+                case PRISON_SQUARE_POS:
                     squares.add(new RegularSquare("PrisonSquare"));
                     break;
-                case 30:
-                    squares.add(new GoToJailSquare("GoToJailSquare " + i, squares.get(jailPosition)));
+                case GO_TO_JAIL_SQUARE_POS:
+                    squares.add(new GoToJailSquare("GoToJailSquare " + i, squares.get(PRISON_SQUARE_POS)));
                     break;
                 default:
                     squares.add(new RegularSquare("Square " + i));

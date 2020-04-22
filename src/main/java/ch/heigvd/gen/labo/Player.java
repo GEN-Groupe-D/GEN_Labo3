@@ -1,7 +1,5 @@
 package ch.heigvd.gen.labo;
 
-import java.util.ArrayList;
-
 class Player {
     private String name;
     private Cup cup;
@@ -64,7 +62,7 @@ class Player {
 
     /**
      * add a sum to current player cash
-     * @param sumToAdd
+     * @param sumToAdd Amount of cash to add
      */
     public void addCash(int sumToAdd) {
         this.cash += sumToAdd;
@@ -72,7 +70,7 @@ class Player {
 
     /**
      * remove some cash to the player
-     * @param sumToSub
+     * @param sumToSub Amount of cash to remove
      */
     public void reduceCash(int sumToSub) {
         this.cash -= sumToSub;
