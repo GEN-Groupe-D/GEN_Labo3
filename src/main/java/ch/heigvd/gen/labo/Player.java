@@ -33,9 +33,10 @@ class Player {
         int total;
         Square oldLoc, newLoc;
 
-        this.cup.roll();
+        cup.roll();
+        System.out.println(name + " rolled " + cup.getTotal());
 
-        total = this.cup.getTotal();
+        total = cup.getTotal();
 
         // 2. Calculate the new square location
         oldLoc = piece.getLocation();
@@ -44,6 +45,7 @@ class Player {
         // 3. Move the player's piece from the old location to the new location
         piece.setLocation(newLoc);
         newLoc.landedOn(this);
+        System.out.println(name + " landed on " + newLoc.getName());
     }
 
     public void setLocation(Square newLoc) {

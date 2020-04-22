@@ -40,9 +40,11 @@ public class MonopolyGame {
      * Play a game of monopoly
      */
     public void playGame() {
+        System.out.println("Game started...");
         for (int roundCnt = 0; roundCnt < MAX_ROUND_NB; roundCnt++) {
             playRound();
         }
+        System.out.println("Game finished.");
     }
 
     /**

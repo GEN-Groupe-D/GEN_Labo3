@@ -26,13 +26,13 @@ class Board {
         for (int i = 1; i < SQUARE_NB; i++) {
             switch (i){
                 case INCOME_TAX_SQUARE_POS:
-                    squares.add(new IncomeTaxSquare("IncomeTaxSquare " + i));
+                    squares.add(new IncomeTaxSquare("IncomeTaxSquare"));
                     break;
                 case PRISON_SQUARE_POS:
                     squares.add(new RegularSquare("PrisonSquare"));
                     break;
                 case GO_TO_JAIL_SQUARE_POS:
-                    squares.add(new GoToJailSquare("GoToJailSquare " + i, squares.get(PRISON_SQUARE_POS)));
+                    squares.add(new GoToJailSquare("GoToJailSquare", squares.get(PRISON_SQUARE_POS)));
                     break;
                 default:
                     squares.add(new RegularSquare("Square " + i));
