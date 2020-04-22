@@ -7,6 +7,8 @@
 package ch.heigvd.gen.labo;
 
 class Player {
+    public static final int INITIAL_CASH = 1500;
+
     private String name;
     private Cup cup;
     private Board board;
@@ -23,6 +25,7 @@ class Player {
         this.name = name;
         this.cup = cup;
         this.board = board;
+        cash = INITIAL_CASH;
         piece = new Piece("piece_" + name, board.getFirstSquare());
     }
 

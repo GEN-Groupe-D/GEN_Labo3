@@ -33,6 +33,6 @@ public class GoSquareTest {
             oldLoc.landedOn(player);
         }
 
-        assertEquals(turn * 200, player.getNetWorth());
+        assertEquals(Player.INITIAL_CASH + (turn * GoSquare.ADD_CASH_AMOUNT), player.getNetWorth());
     }
 }

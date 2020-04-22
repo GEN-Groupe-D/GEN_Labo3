@@ -7,6 +7,8 @@
 package ch.heigvd.gen.labo;
 
 public class GoSquare extends Square {
+    public final static int ADD_CASH_AMOUNT = 200;
+
     /**
      * Square class constructor
      *
@@ -19,6 +21,6 @@ public class GoSquare extends Square {
     @Override
     public void landedOn(Player p) {
 
-        p.addCash(200);
+        p.addCash(ADD_CASH_AMOUNT);
     }
 }

@@ -13,15 +13,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.ArrayList;
-
 public class PlayerTest {
 
     Player player;
 
     @BeforeEach
     void constructPlayer() {
-
         player = new Player("player_1", new Cup(MonopolyGame.NB_DICE), new Board());
     }
 
@@ -42,15 +39,19 @@ public class PlayerTest {
     }
 
     @Test
+    public void initialCashTest() {
+        assertEquals(Player.INITIAL_CASH, player.getNetWorth());
+    }
+
+    @Test
     public void addCashTest() {
         player.addCash(200);
-        assertEquals(200, player.getNetWorth());
+        assertEquals(Player.INITIAL_CASH + 200, player.getNetWorth());
     }
 
     @Test
     public void reduceCashTest() {
-        player.addCash(500);
-        player.reduceCash(200);
-        assertEquals(300, player.getNetWorth());
+        player.reduceCash(500);
+        assertEquals(Player.INITIAL_CASH - 500, player.getNetWorth());
     }
 }
